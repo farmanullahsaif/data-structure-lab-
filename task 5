@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[2][2][2] = {
+        {
+            {10, 20},
+            {30, 40}
+        },
+        {
+            {50, 60},
+            {70, 80}
+        }
+    };
+
+    int search = 70;
+
+    cout << "3D Array:" << endl << endl;
+
+    for (int layer = 0; layer < 2; layer++)
+    {
+        cout << "Layer " << layer + 1 << ":" << endl;
+
+        for (int row = 0; row < 2; row++)
+        {
+            for (int column = 0; column < 2; column++)
+            {
+                cout << arr[layer][row][column] << " ";
+            }
+            cout << endl;
+        }
+
+        cout << endl;
+    }
+
+    cout << "Searching for: " << search << endl << endl;
+
+    for (int layer = 0; layer < 2; layer++)
+    {
+        for (int row = 0; row < 2; row++)
+        {
+            for (int column = 0; column < 2; column++)
+            {
+                if (arr[layer][row][column] == search)
+                {
+                    cout << "Element found!" << endl;
+                    cout << "Layer: " << layer + 1 << endl;
+                    cout << "Row: " << row + 1 << endl;
+                    cout << "Column: " << column + 1 << endl;
+                }
+            }
+        }
+    }
+
+    return 0;
+}
